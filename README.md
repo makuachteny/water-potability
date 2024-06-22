@@ -8,7 +8,7 @@ You can access the detailed project report [here](https://docs.google.com/docume
 
 ## Screenshots
 
-![Home Screen](/App_Screenshots/Home_Screen.png)
+![Home Screen](/App_Screenshots/)
 *Home Screen*
 
 ![pH Screen](/App_Screenshots/Ph_Screen.png)
