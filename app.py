@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 # Load the machine learning model
-model = tf.keras.models.load_model('./potability_model.keras')
+model = tf.keras.models.load_model('./models/potability_model.keras')
 
 # FastAPI decorator to create the app object
 app = FastAPI()
