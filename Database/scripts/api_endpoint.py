@@ -18,8 +18,8 @@ def get_water_samples():
         sample['_id'] = str(sample['_id'])
     return jsonify(str(water_samples))
 
-# #Get request with the id parameter
-# @app.route('/<id>', methods=['GET'])
+#Get request with the id parameter
+@app.route('/<id>', methods=['GET'])
 # def get_water_sample(id):
 #     sample = water_samples_collection.find_one({'_id': str(ObjectId(id))})
 #     if sample:
