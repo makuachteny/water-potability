@@ -2,6 +2,7 @@ from fastapi import FastAPI, Depends
 from pydantic import BaseModel, Field
 import numpy as np
 import tensorflow as tf
+import uvicorn
 
 # Load the machine learning model
 model = tf.keras.models.load_model('./models/potability_model.keras')
