@@ -39,7 +39,7 @@ def root():
 
 @app.post("/predict")
 def predict(data: InputData = Depends()):
-    # Extract features from input data
+    # Retrieving features from input data
     features = np.array([[
         data.ph, data.Hardness, data.Solids, data.Chloramines, data.Sulfate,
         data.Conductivity, data.Organic_carbon, data.Trihalomethanes, data.Turbidity
