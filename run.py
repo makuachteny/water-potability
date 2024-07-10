@@ -1,20 +1,27 @@
 import requests
 import pandas as pd
-from sklearn.externals import joblib
+import json
+import tensorflow as tf
+import numpy as np
 
-url = "https://api.example.com/data"
+url = "http://127.0.0.1:5000/"
 response = requests.get(url)
 data = response.json()
 
 df = pd.DataFrame(data)
 
-X = df[['ph', 'Hardness', 'Solids','Chloramines','Sulfate','Conductivity','Organic_carbon','Trihalomethanes', 'Turbidity', 'Potability']] 
+# Get the last row of the dataframe
+last_row = df.iloc[-1]
 
+# Load the model
+model = tf.keras.models.load_model('./Models/potability_model.keras')
 
-model = joblib.load('models/potability_model.keras')
+last_row = last_row.drop(axis=0, labels=['_id', 'location_id', 'potability'])
 
+last_row_values = last_row.values.astype('float32')
 
-y_pred = model.predict(X)
+last_row_values = np.expand_dims(last_row_values, axis=0)
 
+y_pred = model.predict(last_row_values)
 
 print(y_pred)
