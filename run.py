@@ -14,8 +14,9 @@ def predict_water_potability(url, model_path):
     Returns:
         numpy.ndarray: The prediction result.
     """
-    
+    print("Fetching data from the API...")
     response = requests.get(url)
+    
     df = pd.DataFrame(data)
     last_row = df.iloc[-1]
     model = tf.keras.models.load_model(model_path)
