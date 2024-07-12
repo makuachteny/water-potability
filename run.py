@@ -9,6 +9,6 @@ def predict_water_potability(url, model_path):
     df = pd.DataFrame(data)
     last_row = df.iloc[-1]
     model = tf.keras.models.load_model(model_path)
-    last_row = last_row.drop(labels=['_id', 'location_id', 'potability'])
+    last_row = last_row.drop(axis=0, labels=['_id', 'location_id', 'potability'])
     last_row_values = last_row.values.astype('float32')
     return y_pred
