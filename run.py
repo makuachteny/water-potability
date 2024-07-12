@@ -16,6 +16,7 @@ def predict_water_potability(url, model_path):
     """
     print("Fetching data from the API...")
     response = requests.get(url)
+    data = response.json()
     df = pd.DataFrame(data)
     last_row = df.iloc[-1]
 
