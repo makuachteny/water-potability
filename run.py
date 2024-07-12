@@ -16,9 +16,10 @@ def predict_water_potability(url, model_path):
     """
     print("Fetching data from the API...")
     response = requests.get(url)
-    
     df = pd.DataFrame(data)
     last_row = df.iloc[-1]
+
+    print("Loading the pre-trained model...")
     model = tf.keras.models.load_model(model_path)
     last_row = last_row.drop(axis=0, labels=['_id', 'location_id', 'potability'])
     last_row_values = last_row.values.astype('float32')
