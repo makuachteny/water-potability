@@ -26,6 +26,8 @@ def predict_water_potability(url, model_path):
     last_row = last_row.drop(axis=0, labels=['_id', 'location_id', 'potability'])
     last_row_values = last_row.values.astype('float32')
     last_row_values = np.expand_dims(last_row_values, axis=0)
+
+    print("Making predictions...")
     y_pred = model.predict(last_row_values)
     return y_pred
 
