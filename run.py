@@ -30,6 +30,14 @@ def predict_water_potability(url, model_path):
 
     print("Making predictions...")
     y_pred = model.predict(last_row_values)
+
+    # Interprete the prediction result
+    if y_pred[0][0] == 0:
+        result = "The water is not potable."
+    else:
+        result = "The water is potable."
+    
+    print(result)
     return y_pred
 
 print(predict_water_potability('http://127.0.0.1:5000/','./Models/potability_model.keras'))
