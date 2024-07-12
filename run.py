@@ -37,7 +37,7 @@ def predict_water_potability(url, model_path):
     else:
         result = "The water is potable."
     
-    print(result)
+    # print(result)
     return result
 
 print(predict_water_potability('http://127.0.0.1:5000/','./Models/potability_model.keras'))
