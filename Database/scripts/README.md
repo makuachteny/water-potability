@@ -6,6 +6,11 @@ This document provides an overview of the schema for the water quality data coll
 
 ## Schema Structure
 
+## Design
+
+![Database Schema Design](/App_Screenshots/Schema_design.png)
+*Design*
+
 ### Collections
 
 #### 1. Admin
